@@ -63,38 +63,38 @@ export default function Home() {
         </div>
 
         {/* 게임 카드 그리드 */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 sm:items-stretch">
           {GAMES.map((game, idx) => (
             <a
               key={game.id}
               href={game.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="game-card-link"
+              className="game-card-link h-full"
             >
               <div
-                className={`game-card text-center border-2 ${game.border} ${mounted ? 'animate-bounce-in' : ''}`}
+                className={`game-card text-center border-2 h-full flex flex-col ${game.border} ${mounted ? 'animate-bounce-in' : ''}`}
                 style={{ animationDelay: `${idx * 0.15}s`, animationFillMode: 'both' }}
               >
                 {/* 게임 아이콘 */}
-                <div className="text-6xl mb-4">{game.emoji}</div>
+                <div className="text-5xl sm:text-6xl mb-3 sm:mb-4">{game.emoji}</div>
 
                 {/* 제목 */}
-                <h2 className={`text-2xl font-black mb-2 bg-gradient-to-r ${game.gradient} bg-clip-text text-transparent`}>
+                <h2 className={`text-xl sm:text-2xl font-black mb-1 sm:mb-2 bg-gradient-to-r ${game.gradient} bg-clip-text text-transparent`}>
                   {game.title}
                 </h2>
 
                 {/* 설명 */}
-                <p className="text-gray-500 text-sm mb-4">
+                <p className="text-gray-500 text-xs sm:text-sm mb-3 sm:mb-4">
                   {game.description}
                 </p>
 
                 {/* 기능 뱃지 */}
-                <div className="flex flex-wrap justify-center gap-1.5 mb-5">
+                <div className="flex flex-wrap justify-center gap-1.5 mb-4 sm:mb-5 flex-1">
                   {game.features.map((f) => (
                     <span
                       key={f}
-                      className={`text-xs font-semibold px-2.5 py-1 rounded-full ${game.badge}`}
+                      className={`text-xs font-semibold px-2 sm:px-2.5 py-1 rounded-full ${game.badge}`}
                     >
                       {f}
                     </span>
@@ -102,7 +102,7 @@ export default function Home() {
                 </div>
 
                 {/* 플레이 버튼 */}
-                <div className={`py-3 rounded-xl font-bold text-white bg-gradient-to-r ${game.gradient} shadow-lg`}>
+                <div className={`py-2.5 sm:py-3 rounded-xl font-bold text-white bg-gradient-to-r ${game.gradient} shadow-lg mt-auto`}>
                   플레이하기
                 </div>
               </div>
