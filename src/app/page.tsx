@@ -39,6 +39,18 @@ const GAMES = [
     border: 'border-rose-200 hover:border-rose-400',
     badge: 'bg-rose-100 text-rose-700',
   },
+  {
+    id: 'rummikub',
+    emoji: '🎯',
+    title: '루미큐브',
+    description: '숫자 타일로 조합을 만드는 전략 보드게임',
+    features: ['온라인 멀티플레이', '친구와 대결', '전략적 타일 조합'],
+    url: 'https://eunwoo-rummikub.vercel.app',
+    gradient: 'from-amber-500 to-orange-600',
+    bgLight: 'bg-amber-50',
+    border: 'border-amber-200 hover:border-amber-400',
+    badge: 'bg-amber-100 text-amber-700',
+  },
 ];
 
 export default function Home() {
@@ -63,7 +75,7 @@ export default function Home() {
         </div>
 
         {/* 게임 카드 그리드 */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 sm:items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 sm:items-stretch">
           {GAMES.map((game, idx) => (
             <a
               key={game.id}
